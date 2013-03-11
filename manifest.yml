@@ -1,0 +1,10 @@
+name: "ADN Timeline"
+author: "Brandon Mathis"
+description: "ADN Timeline displays recent posts on App.net for a user or hashtag."
+url: "https://github.com/octopress/adn-timeline"
+version: 1.0
+
+assets:
+  javascripts: ['javascripts/adn-timeline.js']
+  stylesheets: ['stylesheets/_adn-timeline.scss']
+  plugins:     ['plugins/adn_timeline.rb']

@@ -8,3 +8,6 @@ assets:
   javascripts: ['javascripts/adn-timeline.js']
   stylesheets: ['stylesheets/_adn-timeline.scss']
   plugins:     ['plugins/adn_timeline.rb']
+
+dependencies: 
+  octopress: 'config-tag'

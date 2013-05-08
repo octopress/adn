@@ -49,7 +49,7 @@ Wherever you want your App.net timeline to appear, simply use the adn_timeline l
 <h1>On App.net</h1>
 {% adn_timeline %}
 <p>
-  Follow <a href="https://alpha.app.net/{{ site.adn_timeline.username }}>@{{ site.adn_timeline.username }}</a>.
+  Follow <a href="https://alpha.app.net/{{ site.adn_timeline.username }} rel='me'>@{{ site.adn_timeline.username }}</a>.
 </p>
 </section>
 ```

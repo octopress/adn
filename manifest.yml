@@ -10,4 +10,4 @@ assets:
   plugins:     ['plugins/adn_timeline.rb']
 
 dependencies: 
-  octopress: 'config-tag'
+  - 'config-tag'

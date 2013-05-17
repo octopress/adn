@@ -1,6 +1,4 @@
-begin
-  require './plugins/config_tag'
-rescue LoadError # config_tag is not installed
+unless defined?(ConfigTag)
   raise "This plugin requires the config_tag plugin, available at https://github.com/octopress/config-tag"
 end
 

@@ -6,4 +6,4 @@ url: "https://github.com/octopress/adn-timeline"
 version: 1.0
 
 dependencies: 
-  octopress: 'config-tag'
+  - 'config-tag'

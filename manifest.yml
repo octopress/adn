@@ -4,6 +4,3 @@ author: "Brandon Mathis"
 description: "ADN Timeline displays recent posts on App.net for a user or hashtag."
 url: "https://github.com/octopress/adn-timeline"
 version: 1.0
-
-dependencies: 
-  - 'config-tag'

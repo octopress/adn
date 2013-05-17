@@ -1,4 +1,4 @@
-unless defined?(ConfigTag)
+unless defined?(Octopress::ConfigTag)
   raise "This plugin requires the config_tag plugin, available at https://github.com/octopress/config-tag"
 end
 

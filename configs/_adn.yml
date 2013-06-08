@@ -1,0 +1,13 @@
+---
+# -------------------------- #
+#  App.net Configs           #
+# -------------------------- #
+
+adn:
+  username:
+  timeline: 
+    count: 4
+    avatars: false
+    replies: false
+    reposts: false
+

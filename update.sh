@@ -1,8 +1,6 @@
 URL_BASE="https://raw.github.com/imathis/adn-timeline/master/"
-js="javascripts/adn-timeline.js"
-jsm="javascripts/adn-timeline.min.js"
+coffee="javascripts/coffeescript/adn-timeline.coffee"
 sass="stylesheets/sass/_adn-timeline.scss"
 
-curl $URL_BASE$js > $js
-curl $URL_BASE$jsm > $jsm
-curl $URL_BASE$sass > stylesheets/_adn-timeline.scss
+curl $URL_BASE$coffee > javascripts/modules/adn-timeline.coffee
+curl $URL_BASE$sass > stylesheets/_style.scss

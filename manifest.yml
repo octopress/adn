@@ -1,6 +1,6 @@
-name: "ADN Timeline"
-slug: "adn-timeline"
+name: "App.net blogging kit"
+slug: "adn"
 author: "Brandon Mathis"
-description: "ADN Timeline displays recent posts on App.net for a user or hashtag."
-url: "https://github.com/octopress/adn-timeline"
+description: "ADN Timeline displays recent posts on App.net for a user or hashtag. Easily add follow and share buttons too."
+url: "https://github.com/octopress/adn"
 version: 1.0

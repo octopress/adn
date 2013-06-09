@@ -18,26 +18,21 @@ Copy the javascripts, stylesheets, and plugins to their respective locations for
 
 ```
 javascripts/adn-timeline.min.js -> [your-site]/source/javascripts/adn-timeline.min.js
-stylesheets/_adn-timeline.scss  -> [your-site]/sass/plugins/_adn-timeline.scss
+stylesheets/_style.scss         -> [your-site]/sass/plugins/adn/_style.scss
+stylesheets/_adn-timeline.scss  -> [your-site]/sass/plugins/adn/_adn-timeline.scss
 plugins/adn_timeline.rb         -> [your-site]/plugins/adn_timeline.rb
 ```
 
 In your `sass/custom/_styles.scss` stylesheet add the following:
 
 ```scss
-@import 'adn-timeline';
-
-// Include the layout and theme mixins
-.adn-timeline {
-  @include adn-timeline-layout;
-  @include adn-timeline-theme;
-}
+@import '../pluings/adn/style';
 ```
 
-Next copy the default configuration from [configs/_adn-timeline.yml](https://github.com/octopress/adn-timeline/blob/master/configs/_adn-timeline.yml) into your site's configs and change as necessary. And finally, add the necessary javascripts to your site's head in `source/_includes/custom/head.html` like this:
+Next copy the default configuration from [configs/_adn.yml](https://github.com/octopress/adn-timeline/blob/master/configs/_adn.yml) into your site's configs and change as necessary. And finally, add the necessary javascripts to your site's head in `source/_includes/custom/head.html` like this:
 
 ```html
-<script type="text/javascript" src="{{ root_url }}/javascripts/adn-timeline.js"></script>
+<script type="text/javascript" src="{{ root_url }}/javascripts/adn-timeline.min.js"></script>
 ```
 
 ## Usage
@@ -48,9 +43,7 @@ Wherever you want your App.net timeline to appear, simply use the adn_timeline l
 <section>
 <h1>On App.net</h1>
 {% adn_timeline %}
-<p>
-  Follow <a href="https://alpha.app.net/{{ site.adn_timeline.username }} rel='me'>@{{ site.adn_timeline.username }}</a>.
-</p>
+<p>{% adn_follow %}</p>
 </section>
 ```
 
@@ -58,10 +51,12 @@ This will replace the liquid tag with the following html:
 
 ```html
 <div class='adn-timeline' data-avatars='false' data-count='4' data-replies='false' data-reposts='false' data-username='your-username'></div>
-<script type='text/javascript'>$(document).ready(function(){ AdnTimeline.init() })</script>
+<script type='text/javascript'>$(document).ready(function(){ new AdnTimeline() })</script>
 ```
 
-The `AdnTimeline.init()` script will read the configuration variables from the div, fetch recent posts and inject them into the `.adn-timeline` div.
+As well as the standard follow button script provided by [App.net](http://app.net/about/buttons/).
+
+The `new AdnTimeline()` script will read the configuration variables from the div, fetch recent posts and inject them into the `.adn-timeline` div.
 
 ## License
 (The MIT License)

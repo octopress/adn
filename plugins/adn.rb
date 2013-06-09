@@ -12,7 +12,7 @@ module Octopress
       def render(context)
         config = context.registers[:site].config
         output = config_tag(config, 'adn.timeline')
-        output += "\n<script type='text/javascript'>$(document).ready(function(){ new AdnTimeline({username: #{config['adn.username']}}) })</script>"
+        output += "\n<script type='text/javascript'>$(document).ready(function(){ timeline = require('adn/adn-timeline'); new timeline({username: '#{config['adn.username']}'}) })</script>"
       end
     end
     class Share < Liquid::Tag
@@ -21,9 +21,9 @@ module Octopress
       end
     
       def render(context)
-        puts context['adn.username']
+        config = context.registers[:site].config
         <<-tag
-          <a href="https://alpha.app.net/intent/follow/?user_id=%#{context['adn.username']}" class='adn-button' target='_blank' data-type='follow' data-width='277' data-height='27' data-user-id='@imathis' data-show-username='1' rel='me'>Follow me on App.net</a>
+          <a href="https://alpha.app.net/intent/follow/?user_id=%#{config['adn']['username']}" class='adn-button' target='_blank' data-type='follow' data-width='277' data-height='27' data-user-id='@imathis' data-show-username='1' rel='me'>Follow me on App.net</a>
           <script>(function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src='//d2zh9g63fcvyrq.cloudfront.net/adn.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'adn-button-js'));</script>
         tag
       end
@@ -44,7 +44,7 @@ module Octopress
   end
 end
 
-Liquid::Template.register_tag('adn-timeline', Octopress::ADN::Timeline)
-Liquid::Template.register_tag('adn-share', Octopress::ADN::Share)
-Liquid::Template.register_tag('adn-follow', Octopress::ADN::Follow)
+Liquid::Template.register_tag('adn_timeline', Octopress::ADN::Timeline)
+Liquid::Template.register_tag('adn_share', Octopress::ADN::Share)
+Liquid::Template.register_tag('adn_follow', Octopress::ADN::Follow)
 

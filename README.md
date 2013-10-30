@@ -26,7 +26,7 @@ plugins/adn_timeline.rb         -> [your-site]/plugins/adn_timeline.rb
 In your `sass/custom/_styles.scss` stylesheet add the following:
 
 ```scss
-@import '../pluings/adn/style';
+@import '../plugins/adn/style';
 ```
 
 Next copy the default configuration from [configs/_adn.yml](https://github.com/octopress/adn-timeline/blob/master/configs/_adn.yml) into your site's configs and change as necessary. And finally, add the necessary javascripts to your site's head in `source/_includes/custom/head.html` like this:
